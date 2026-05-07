@@ -1,0 +1,40 @@
+class OverloadDemo {
+
+
+    static int power(int a, int b) {
+        int result = 1;
+        for (int i = 0; i < b; i++) {
+            result *= a;
+        }
+        return result;
+    }
+
+        static double power(double a, double b) {
+        return Math.pow(a, b);
+    }
+
+    static int absolute(int a) {
+        return (a < 0) ? -a : a;
+    }
+
+    static double absolute(double a) {
+        return (a < 0) ? -a : a;
+    }
+
+    public static void main(String[] args) {
+
+        int x = -5, y = 3;
+        double p = -4.5, q = 2.0;
+
+        // Testing overloaded methods
+        System.out.println("Power (int): " + power(x, y));
+        System.out.println("Power (double): " + power(p, q));
+        System.out.println("Absolute (int): " + absolute(x));
+        System.out.println("Absolute (double): " + absolute(p));
+
+        // Testing static methods from Math class
+        System.out.println("Math.pow(): " + Math.pow(x, y));
+        System.out.println("Math.abs(int): " + Math.abs(x));
+        System.out.println("Math.abs(double): " + Math.abs(p));
+    }
+}
